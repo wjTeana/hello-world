@@ -1,0 +1,17 @@
+//https://leetcode.com/problems/reverse-string/
+//
+//
+char* reverseString(char* s) {
+    int i=0;
+    int r=strlen(s)-1;
+    char c;
+    while (i<r) {
+        c=s[i];
+        s[i]=s[r];
+        s[r]=c;
+        i++;
+        r--;
+    }
+
+    return s;
+}
