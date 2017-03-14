@@ -1,6 +1,7 @@
 //https://leetcode.com/problems/reverse-string/
 //some compilers will need an array to be sized when defined. you should be careful to this error.
 //
+//
 char* reverseString(char* s) {
     int i=0;
     int r=strlen(s)-1;
