@@ -1,0 +1,10 @@
+//i want to study Data Structures and Algorithm Analysis.
+//And my GitHub and Leetcode account will witness the hard-working process.
+//
+//
+#include <stdio.h>
+int main()
+{
+  printf("Hello man!");
+  return 0;
+}
