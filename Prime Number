@@ -1,0 +1,88 @@
+//code to solve simple prime number questions.
+//
+//
+#include <stdio.h>
+#include <stdlib.h>
+int prime(int j);
+int main()
+{
+    int number;
+    int *a;
+    int cnt=0;
+    int j=2;
+    printf("你想得到前多少个素数？\n");
+    scanf("%d", &number);
+    a=(int*)malloc(number*sizeof(int));
+    while (cnt<number) {
+            if (prime(j)) {
+                a[cnt]=j;
+                cnt++;
+            }
+            j++;
+    }
+    for(j=1;j<=cnt;j++) {
+        printf("%d ", a[j-1]);
+        if(j%5==0) {
+            printf("\n");  //控制输出行列
+        }
+    }
+    free(a);
+    return 0;
+}
+//判断一个数是不是素数
+int prime(int j)
+{
+    int i;
+    int ret=1;
+    for(i=2;i<j;i++) {
+        if (j%i==0) {
+            ret =0;
+            break;
+        }
+    }
+    return ret;
+}
+
+//
+//
+//#include <stdio.h>
+#include <stdlib.h>
+int prime(int j);
+int main()
+{
+    int number;
+    int *a;
+    int cnt=0;
+    int j;
+    printf("你想得到多少以内的素数：");
+    scanf("%d", &number);
+    a=(int*)malloc(number*sizeof(int));
+    for (j=2;j<number;j++) {
+            if (prime(j)) {
+              a[cnt]=j;
+              cnt++;
+            }
+        }
+    for(j=1;j<=cnt;j++) {
+        printf("%d ", a[j-1]);
+        if(j%5==0) {
+            printf("\n");
+        }
+    }
+    free(a);
+    return 0;
+}
+
+int prime(int j)
+{
+    int i;
+    int ret=1;
+    for(i=2;i<j;i++) {
+        if (j%i==0) {
+            ret =0;
+            break;
+        }
+    }
+    return ret;
+}
+
