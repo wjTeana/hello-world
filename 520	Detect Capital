@@ -1,0 +1,44 @@
+//https://leetcode.com/problems/detect-capital/#/description
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+bool detectCapitalUse(char* word);
+int main(void)
+{
+    char word[100];
+    scanf("%s", word);
+    printf("%d", detectCapitalUse(word));
+    return 0;
+}
+bool detectCapitalUse(char* word) {
+    int num = strlen(word);
+    int truefalse=1;
+    int i;
+    if (word[0]<91) {
+            if (word[1]<91) {
+                for (i=2; i<num; i++) {
+                    if (word[i]>96) {
+                        truefalse=0;
+                        break;
+                    }
+                }
+            } else {
+            for (i=2; i<num; i++) {
+                if (word[i]<91) {
+                    truefalse=0;
+                    break;
+                }
+            }
+            }
+    } else {
+        for (i=1; i<num; i++) {
+            if (word[i]<91) {
+                truefalse=0;
+                break;
+            }
+        }
+    }
+    return truefalse;
+}
+
